@@ -10,7 +10,7 @@ on:
 
 env:
   PythonVersion: 3.8
-  DockerImageName: todoapp
+  DockerImageName: gosxan/todoapp
 
 jobs:
   python-ci:
@@ -91,7 +91,7 @@ jobs:
 
   helm-ci:
     runs-on: ubuntu-latest
-    if: ${{ github.ref_name == 'main' }}
+    if: ${{ github.ref_name == 'gosxa-develop' }}
     needs: python-ci
     steps:
 
@@ -118,4 +118,3 @@ jobs:
       with:
         name: helm-chart
         path: ./todoapp-*.tgz
-        
